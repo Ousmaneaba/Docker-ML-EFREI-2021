@@ -1,6 +1,9 @@
 'use strict';
 
 const express = require('express');
+const { spawn } = require('child_process');
+const fs = require('fs');
+
 const app = express();
 
 const PORT = 8080;
@@ -17,10 +20,33 @@ app.get('/', (req, res) => {
 	}
 	else{
 
-		var result;
-		result = "neutral";
+		let timestamp = new Date().getTime();
+		let fileName = timestamp + "_tmp.txt";
+		let scriptProcess = spawn('python', ['run_model.py', req.query.message, fileName]);
+		let result = "error";
 
-		res.render('index', {message: req.query.message, result: result});
+		 scriptProcess.on('close', (code) => {
+
+		  	fs.readFile(fileName, 'utf8', function (err,data) {
+
+			  if(data == "1"){
+			  	result = "positive";
+			  }
+			  if(data == "0"){
+			  	result = "negative";
+			  }
+			  if(data == "2"){
+			  	result = "neutral";
+			  }
+
+		      res.render('index', {message: req.query.message, result: result});
+
+		      spawn('rm', [fileName]);
+
+			});
+		    
+		  });
+
 	}
   
 });

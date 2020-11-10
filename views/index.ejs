@@ -31,7 +31,7 @@
 	<div class="container-contact100">
 
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
+			<form id="ml_form" class="contact100-form validate-form">
 				<span class="contact100-form-title">
 					Sentiment Analysis
 				</span>
@@ -70,20 +70,25 @@
 				</div>
 
 				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
+					<button class="contact100-form-btn" onclick="myFunction()">
 						<span>
 							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
 							Send and analyze
 						</span>
 					</button>
+					<div style="visibility: hidden" id="custom_loader" class="lds-dual-ring"></div>
 				</div>
 			</form>
 		</div>
 	</div>
 
-
-
-	<div id="dropDownSelect1"></div>
+<script type="text/javascript">
+	function myFunction()
+{
+	console.log("clicked");
+    document.getElementById('custom_loader').setAttribute("style", "visibility: visible");
+}
+ </script>
 
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
