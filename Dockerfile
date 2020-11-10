@@ -5,8 +5,10 @@ FROM nikolaik/python-nodejs:latest
 WORKDIR app/
 
 # Copying package/package-lock and installing dependencies
-COPY package*.json ./
+COPY package*.json requirements.txt ./
+
 RUN npm install
+RUN pip install -r requirements.txt
 
 # Bundling app source
 COPY . .
