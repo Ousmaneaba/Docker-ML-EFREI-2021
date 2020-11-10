@@ -1,5 +1,5 @@
 # Node.js and NPM will be installed by default
-FROM node:12
+FROM nikolaik/python-nodejs:latest
 
 # Creating working directory
 WORKDIR app/
