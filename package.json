@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "Node.js server on Docker",
   "author": "BA - PHILEMON",
-  "license" : "UNLICENSED" ,
+  "license": "UNLICENSED",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.16.1"
+    "express": "^4.16.1",
+    "ejs": "^3.1.5"
   },
   "repository": {
     "type": "git",
