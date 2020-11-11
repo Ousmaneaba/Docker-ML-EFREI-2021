@@ -10,7 +10,8 @@ Aymérou BA Ousmane - Philemon Christopher
 ### How to test :
 
 In order to test, you only need to run the command 'npm test' if you modified the application.
-To run test through your docker container, you have to use "docker exe -it <container_name> npm test". <container_name> is, if you cloned the repository and are in the Docker-ML-EFREI-2021 'docker-ml-efrei-2021_app_1'. 
+To run test through your docker container, you have to use "docker exec -it <container_name> npm test". <container_name> is, if you cloned the repository and are in the Docker-ML-EFREI-2021 'docker-ml-efrei-2021_app_1'.
+
 NB : you can check your container name by using "docker ps -a".
 
 Currently, 3 tests are available :
