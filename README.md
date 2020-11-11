@@ -17,3 +17,6 @@ Currently, 3 tests are available :
 - testing if the server return the result while processing a text, in an html page
 
 All tests are link with the code. For example, if you modify the application host in 'config.js' and change it from localhost to something else, the corresponding test will fail.
+
+
+NB : While using the web application, be aware of the white loading next to the " Send And Analyse " button.
